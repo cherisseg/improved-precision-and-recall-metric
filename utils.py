@@ -32,7 +32,7 @@ def initialize_stylegan():
     print('Initializing StyleGAN...\n')
     path = '/mnt/lustre/users/cgovender/results/00017-sgan-chairs_128-4gpu-mixing-regularization-mix90-stylebased-8/network-snapshot-008307.pkl' # stylegan.pkl trained network
     cache_dir=os.path.join(path, '_cache')
-    f= cache_dir
+    with open(cache_dir) as f:
     _, _, Gs = pickle.load(f) 
     return Gs
 
@@ -43,8 +43,8 @@ def initialize_feature_extractor():
     print('Initializing VGG-16 model...')
     path = '/mnt/lustre/users/cgovender/vgg16.pkl' # vgg16.pkl
     cache_dir=os.path.join(path, '_cache')
-    f= cache_dir
-    _, _, net = pickle.load(f)
+    with open(cache_dir) as f:
+        _, _, net = pickle.load(f)
     return net
 
 #----------------------------------------------------------------------------
