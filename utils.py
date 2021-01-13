@@ -33,7 +33,7 @@ def initialize_stylegan():
     path = '/mnt/lustre/users/cgovender/results/00017-sgan-chairs_128-4gpu-mixing-regularization-mix90-stylebased-8/network-snapshot-008307.pkl' # stylegan.pkl trained network
     cache_dir=os.path.join(path, '_cache')
     with open(cache_dir) as f:
-    _, _, Gs = pickle.load(f) 
+        _, _, Gs = pickle.load(f) 
     return Gs
 
 #----------------------------------------------------------------------------
