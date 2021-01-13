@@ -31,8 +31,8 @@ def initialize_stylegan():
     """Load StyleGAN network pickle."""
     print('Initializing StyleGAN...\n')
     path = '/mnt/lustre/users/cgovender/results/00017-sgan-chairs_128-4gpu-mixing-regularization-mix90-stylebased-8/network-snapshot-008307.pkl' # stylegan.pkl trained network
-    cache_dir=os.path.join(path, '_cache')
-    with open(cache_dir) as f:
+    #cache_dir=os.path.join(path, '_cache')
+    with open(path) as f:
         _, _, Gs = pickle.load(f) 
     return Gs
 
@@ -42,8 +42,8 @@ def initialize_feature_extractor():
     """Load VGG-16 network pickle (returns features from FC layer with shape=(n, 4096)).""" 
     print('Initializing VGG-16 model...')
     path = '/mnt/lustre/users/cgovender/vgg16.pkl' # vgg16.pkl
-    cache_dir=os.path.join(path, '_cache')
-    with open(cache_dir) as f:
+    #cache_dir=os.path.join(path, '_cache')
+    with open(path) as f:
         _, _, net = pickle.load(f)
     return net
 
