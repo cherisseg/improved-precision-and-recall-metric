@@ -30,13 +30,13 @@ def init_tf(random_seed=1234):
 def initialize_stylegan():
     """Load StyleGAN network pickle."""
     print('Initializing StyleGAN...\n')
-    #path = '/mnt/lustre/users/cgovender/results/00017-sgan-chairs_128-4gpu-mixing-regularization-mix90-stylebased-8/network-snapshot-008307.pkl' # stylegan.pkl trained network
+    #path = 'https://storage.googleapis.com/stylegan_env/chairs_network-final.pkl' # stylegan.pkl trained network
     #cache_dir=os.path.join(path, '_cache')
     #with open(path) as f:
     #    _, _, Gs = pickle.load(f) 
     #return Gs
     #Google cloud link
-    url= 'https://storage.googleapis.com/stylegan_env/network-snapshot-008307.pkl'
+    url= 'https://storage.googleapis.com/stylegan_env/chairs_network-final.pkl'
     with dnnlib.util.open_url(url, cache_dir=os.path.join(BASE_PATH, '_cache')) as f:
         _, _, Gs = pickle.load(f) 
     return Gs
