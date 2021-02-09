@@ -36,7 +36,7 @@ def initialize_stylegan():
     #    _, _, Gs = pickle.load(f) 
     #return Gs
     #Google cloud link
-    url= 'https://storage.googleapis.com/stylegan_env/cars_network-final.pkl'
+    url= 'https://storage.googleapis.com/stylegan_env/tables_network-final.pkl'
     with dnnlib.util.open_url(url, cache_dir=os.path.join(BASE_PATH, '_cache')) as f:
         _, _, Gs = pickle.load(f) 
     return Gs
