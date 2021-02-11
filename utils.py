@@ -36,7 +36,7 @@ def initialize_stylegan():
     #return Gs
     #Google cloud link
     
-    network_path = 'mnt/lustre/users/cgovender/results/baseline/chairs/00003-sgan-chairs_128-2gpu-mixing-regularization-mix90-stylebased-8/network-final.pkl' # stylegan.pkl trained network
+    network_path = '/mnt/lustre/users/cgovender/results/baseline/chairs/00003-sgan-chairs_128-2gpu-mixing-regularization-mix90-stylebased-8/network-final.pkl' # stylegan.pkl trained network
     with open(network_path, "rb") as f:
         _, _, Gs = pickle.load(f) 
     return Gs
