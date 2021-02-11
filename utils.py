@@ -30,11 +30,6 @@ def init_tf(random_seed=1234):
 def initialize_stylegan():
     """Load StyleGAN network pickle."""
     print('Initializing StyleGAN...\n')
-    #cache_dir=os.path.join(path, '_cache')
-    #with open(path) as f:
-    #    _, _, Gs = pickle.load(f) 
-    #return Gs
-    #Google cloud link
     
     network_path = '/mnt/lustre/users/cgovender/results/baseline/chairs/00003-sgan-chairs_128-2gpu-mixing-regularization-mix90-stylebased-8/network-final.pkl' # stylegan.pkl trained network
     with open(network_path, "rb") as f:
@@ -46,14 +41,9 @@ def initialize_stylegan():
 def initialize_feature_extractor():
     """Load VGG-16 network pickle (returns features from FC layer with shape=(n, 4096)).""" 
     print('Initializing VGG-16 model...')
-    #path = '/mnt/lustre/users/cgovender/vgg16.pkl' # vgg16.pkl
-    #cache_dir=os.path.join(path, '_cache')
-   # with open(path) as f:
-     #   _, _, net = pickle.load(f)
-    #return net
-    #Google cloud link
-    url ='https://storage.googleapis.com/stylegan_env/vgg16.pkl'
-    with dnnlib.util.open_url(url, cache_dir=os.path.join(BASE_PATH, '_cache')) as f:
+   
+    vgg16 ='/mnt/lustre/users/cgovender/vgg16.pkl'
+    with open(vgg16, "rb") as f:
         _, _ , net = pickle.load(f)
     return net
 #----------------------------------------------------------------------------
