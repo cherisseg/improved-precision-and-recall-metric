@@ -57,7 +57,7 @@ class DistanceBlock():
 class ManifoldEstimator():
     """Estimates the manifold of given feature vectors."""
 
-    def __init__(self, distance_block, features, row_batch_size=25000, col_batch_size=50000,
+    def __init__(self, distance_block, features, row_batch_size=1000, col_batch_size=2000,
                  nhood_sizes=[3], clamp_to_percentile=None, eps=1e-5):
         """Estimate the manifold of given feature vectors.
         
@@ -146,7 +146,7 @@ class ManifoldEstimator():
 #----------------------------------------------------------------------------
 
 def knn_precision_recall_features(ref_features, eval_features, nhood_sizes=[3],
-                                  row_batch_size=25000, col_batch_size=50000, num_gpus=1):
+                                  row_batch_size=1000, col_batch_size=2000, num_gpus=1):
     """Calculates k-NN precision and recall for two sets of feature vectors.
     
         Args:
