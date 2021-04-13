@@ -31,7 +31,7 @@ def initialize_stylegan():
     """Load StyleGAN network pickle."""
     print('Initializing StyleGAN...\n')
     
-    network_path = '/mnt/lustre/users/cgovender/results/baseline/tables/00003-sgan-tables_128-2gpu-mixing-regularization-mix90-stylebased-8/network-snapshot-010000.pkl'#stylegan.pkl trained network
+    network_path = '/mnt/lustre/users/cgovender/results/baseline/tables/00004-sgan-tables_128-2gpu-mixing-regularization-mix90-stylebased-8/network-snapshot-011080.pkl'#stylegan.pkl trained network
     with open(network_path, "rb") as f:
         _, _, Gs = pickle.load(f) 
     return Gs
