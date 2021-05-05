@@ -23,11 +23,11 @@ SAVE_PATH = os.path.dirname(__file__)
 #----------------------------------------------------------------------------
 # Configs for truncation sweep and realism score.
 
-realism_config = dnnlib.EasyDict(minibatch_size=8, num_images=5000, num_gen_images=40, show_n_images=20,
+realism_config = dnnlib.EasyDict(minibatch_size=8, num_images=2000, num_gen_images=40, show_n_images=20,
                                  truncation=1.0, save_images=True, save_path=SAVE_PATH, num_gpus=1,
                                  random_seed=123456) #num_images=2000, num_gen_images=40, show_n_images=20
 
-truncation_config = dnnlib.EasyDict(minibatch_size=8, num_images=5000, truncations=[1.0, 0.7, 0.3],
+truncation_config = dnnlib.EasyDict(minibatch_size=8, num_images=2000, truncations=[1.0, 0.7, 0.3],
                                     save_txt=True, save_path=SAVE_PATH, num_gpus=1, random_seed=1234) # num_images=2000
 
 #----------------------------------------------------------------------------
